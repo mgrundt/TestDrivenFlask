@@ -1,30 +1,17 @@
 {% extends "base.html" %}
+
 {% block content %}
-
-<div class="col-md-3 text-center mx-auto">
-    <h1>Add a Stock</h1>
-</div>
-
+<h2>Add a Stock:</h2>
 <form method="post">
-  <div class="col-md-3 text-center mx-auto">
-    <label for="stockSymbol" class="form-label">Stock Symbol: <em>(required, 1-5 uppercase letters)</em></label>
-    <input type="text" class="form-control" id="stockSymbol" name="stock_symbol" required pattern="[A-Z]{1,5}" />
-  </div> 
- 
-  <div class="col-md-3 text-center mx-auto">
-    <label for="numberOfShares" class="form-label">Number of Shares: <em>(required)</em></label>
-    <input type="text" class="form-control" id="numberOfShares" name="number_of_shares" required/>
-  </div> 
-
-  <div class="col-md-3 text-center mx-auto">
-    <label for="purchasePrice" class="form-label">Purchase Price ($): <em>(required)</em></label>
-  <input type="text"  class="form-control"id="purchasePrice" name="purchase_price" required/>
-  </div>
-  
-  <div class="col-md-3 text-center mx-auto">
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </div>
-
-  
+  <label for="stockSymbol">Stock Symbol <em>(required, 1-5 uppercase letters)</em></label>       <!-- Updated! -->
+  <input type="text" id="stockSymbol" name="stock_symbol" required pattern="[A-Z]{1,5}" />       <!-- Updated! -->
+  <br>
+  <label for="numberOfShares">Number of Shares <em>(required)</em></label>                       <!-- Updated! -->
+  <input type="text" id="numberOfShares" name="number_of_shares" required />                     <!-- Updated! -->
+  <br>
+  <label for="purchasePrice">Purchase Price ($) <em>(required)</em></label>                      <!-- Updated! -->
+  <input type="text" id="purchasePrice" name="purchase_price" placeholder="$300.00" required />  <!-- Updated! -->
+  <br>
+  <input type="submit">
 </form>
 {% endblock %}
